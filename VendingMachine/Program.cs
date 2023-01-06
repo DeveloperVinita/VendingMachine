@@ -8,10 +8,8 @@ namespace VendingMachine
     {
         static void Main(string[] args)
         {
-            VendingMachines.MenuChoices();
-            
+            VendingMachines.MenuChoices();           
         }
-}
+    }
     
-
 }

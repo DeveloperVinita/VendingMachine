@@ -5,20 +5,18 @@ using System.Text;
 
 namespace VendingMachine
 { 
-  public  class VendingMachines : VendingMachineBaseClass 
+  public  class VendingMachines  
     {
+        public static decimal CustomerWallet { get; set; }
+
+        public static List<Product> shoppingCart = new List<Product>();
         public static bool insert { get; private set; }
         
-        public void VendingMachineSetup()
-        {
-        }
 
         public static void MenuChoices()
         {
             Console.Clear();
-
             insert = true;
-
             while (insert)
             {
                 Menu.ShowMenu();
@@ -29,29 +27,21 @@ namespace VendingMachine
                 Console.Write("Make your choice (1-5, ENTER to leave): ");
 
                 string inputText = Console.ReadLine();
-
                 insert = int.TryParse(inputText, out int menuChoice);
-
                 switch (menuChoice)
                 {
                     case 1:
-                        CustomerWallet = VendingMachines.CustomerInput();
+                        CustomerWallet = CustomerInput();
                         break;                   
                     case 2:
-                        ProductChoice = ProductInit.Cola;
-                        CheckValidPurchase(ProductChoice);
+                        CheckValidPurchase(ProductInit.Cola);
                         break;
                     case 3:
-                        ProductChoice = ProductInit.Chips;
-                        CheckValidPurchase(ProductChoice);
+                        CheckValidPurchase(ProductInit.Chips);
                         break;
-                    case 4:
-                        ProductChoice = ProductInit.Candy;
-                        CheckValidPurchase(ProductChoice);
-                        break;
-                    case 5:                     
-                        FinishPurchase();
-                        break;
+                    case 4:                     
+                       CheckValidPurchase(ProductInit.Candy);                     
+                        break;                   
                     default:
                         insert = false;
                         break;
@@ -60,7 +50,7 @@ namespace VendingMachine
         }
 
 
-    public static decimal CustomerInput()
+     public static decimal CustomerInput()
         {
             Console.Clear();
             Console.WriteLine("Insert Coins\n");
@@ -76,20 +66,9 @@ namespace VendingMachine
                 string inputText = Console.ReadLine();                
 
                 insert = decimal.TryParse(inputText, out decimal inputMoney);
-
-                if (string.IsNullOrWhiteSpace(inputText))
-                {
-                    if (CustomerWallet > 0)
-                    {
-
-                    }
-                    insert = false; 
-                }
-
                 if (insert == true)
                 {
                 decimal first = Array.Find(moneyArray, p => p.Equals(inputMoney));
-
                     if (first == inputMoney)
                     {
                         CustomerWallet += inputMoney;
@@ -112,24 +91,23 @@ namespace VendingMachine
             return CustomerWallet;
         }
 
-       public static void CheckValidPurchase(ProductItem productChoice)
+       public static void CheckValidPurchase(Product productChoice)
         {
-            ProductItem ProductChoice = productChoice;
 
             if (CustomerWallet < productChoice.Price)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nPrice is {0} and you have {1} in your wallet.Please insert coins.\n", ProductChoice.Price, CustomerWallet);
+                Console.WriteLine("\nPrice is {0} and you have {1} in your wallet.Please insert coins.\n", productChoice.Price, CustomerWallet);
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.ReadKey();
                 Console.Clear();
             }
             else
             {
-                shoppingCart.Add(ProductChoice);
-                var shoppingItem = shoppingCart.Last().ProductName;
-                Console.WriteLine("You added a {0} ,Please finish your purchase & collect the product", shoppingItem);
-                CustomerWallet -=ProductChoice.Price;
+                shoppingCart.Add(productChoice);              
+                Console.WriteLine("You added a {0} ,Please collect the product", productChoice.ProductName);
+                CustomerWallet -= productChoice.Price;
+                FinishPurchase();
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -138,12 +116,11 @@ namespace VendingMachine
         public static bool FinishPurchase()
         {
             foreach (var item in shoppingCart)
-            {
-                Console.WriteLine($"Cart item: {item.ProductName}\tPrice: {item.Price}\n");          
-                if (item is Snacks)
+            {                   
+                if (item is Product)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Snacks.Use(item.ProductName);
+                    Console.WriteLine("THANK YOU for the purchasing, {0} !", item.ProductName);
                     Console.ForegroundColor = ConsoleColor.Gray;
                 }
             }

@@ -24,8 +24,6 @@ namespace VendingMachine
             Console.WriteLine("Press 3. Chips\t\t$0.50");
             Console.WriteLine("Press 4. Candy\t\t$0.65");
             Console.WriteLine("--------------------------------------------");
-            Console.WriteLine("Press 5. Finish purchase/Return money");
-            Console.WriteLine("--------------------------------------------");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("ENTER to Exit");
             Console.ForegroundColor = ConsoleColor.Gray;

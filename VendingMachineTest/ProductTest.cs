@@ -5,7 +5,12 @@ namespace VendingMachineTest
 {
     public class ProductTest
     {
-        
+        VendingMachines vm;
+        [SetUp]
+        public void Init()
+        {
+            vm = new VendingMachines();
+        }
         [Test]
         public void Product_Validate_ColaPrice()
         {
@@ -21,5 +26,7 @@ namespace VendingMachineTest
         {
             Assert.AreEqual(0.65, ProductInit.Candy.Price);
         }
+
+
     }
 }
