@@ -1,0 +1,14 @@
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.exe
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.deps.json
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.runtimeconfig.json
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.runtimeconfig.dev.json
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.dll
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\bin\Debug\netcoreapp3.1\VendingMachine.pdb
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.AssemblyInfoInputs.cache
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.AssemblyInfo.cs
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.csproj.CoreCompileInputs.cache
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.dll
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.pdb
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.genruntimeconfig.cache
+C:\Users\vinita\source\VendingMachine\VendingMachine\VendingMachine\obj\Debug\netcoreapp3.1\VendingMachine.csproj.AssemblyReference.cache
